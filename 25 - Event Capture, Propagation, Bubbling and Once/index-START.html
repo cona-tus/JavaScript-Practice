@@ -44,19 +44,19 @@
     }
   </style>
 
-  <button></button>
+  <button>Click Once</button>
   <script>
     const divs = document.querySelectorAll('div');
     const button = document.querySelector('button');
+    console.log(divs);
 
     function logText(e) {
       console.log(this.classList.value);
-      // e.stopPropagation(); // stop bubbling!
-      // console.log(this);
+      e.stopPropagation(); // stop bubbling!
     }
 
     divs.forEach(div => div.addEventListener('click', logText, {
-      capture: false,
+      capture: false, // default is false
       once: true
     }));
 

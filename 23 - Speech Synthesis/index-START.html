@@ -42,7 +42,6 @@
     function populateVoices() {
       voices = this.getVoices();
       voicesDropdown.innerHTML = voices
-        .filter(voice => voice.lang.includes('en'))
         .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
         .join('');
     }
@@ -60,7 +59,6 @@
     }
 
     function setOption() {
-      console.log(this.name, this.value);
       msg[this.name] = this.value;
       toggle();
     }
